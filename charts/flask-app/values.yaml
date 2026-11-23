@@ -1,0 +1,16 @@
+replicaCount: 2
+
+image:
+  repository: jagadeeshkaranam99/python-app
+  tag: "latest"
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 80
+  targetPort: 5000
+
+gateway:
+  name: traefik-gateway
+  namespace: traefik
+  hostname: flask-app.local
